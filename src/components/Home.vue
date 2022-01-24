@@ -53,14 +53,16 @@ export default {
           }
           return { login: login};
         },
-      }).then(() => {
-        Swal.fire({
+      }).then((result) => {
+        if(result.value.login){
+          Swal.fire({
           
           icon: "success",
           title: "Te enviaremos un correo",
           showConfirmButton: false,
           timer: 1500,
         });
+        }
       });
     },
   },
